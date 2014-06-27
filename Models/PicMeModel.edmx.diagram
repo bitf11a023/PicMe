@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="951bfba1d8b44272b125493bd6fd7db8" Name="Diagram1">
+        <EntityTypeShape EntityType="PicMe_dbModel.Album" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PicMe_dbModel.Comment_tb" Width="1.5" PointX="7.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PicMe_dbModel.Picture" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PicMe_dbModel.Request" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PicMe_dbModel.User" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="PicMe_dbModel.FK_Album_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PicMe_dbModel.FK_Pictures_Album" ManuallyRouted="false" />
+        <AssociationConnector Association="PicMe_dbModel.FK_Comment_tb_Pictures" ManuallyRouted="false" />
+        <AssociationConnector Association="PicMe_dbModel.FK_Comment_tb_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="PicMe_dbModel.FK_Pictures_User" ManuallyRouted="false" />
+        <AssociationConnector Association="PicMe_dbModel.FK_Request_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

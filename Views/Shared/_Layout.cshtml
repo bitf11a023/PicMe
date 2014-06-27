@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../content/reset.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../content/layout.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../content/style.css" type="text/css" media="all">
+    <script type="text/javascript" src="~/Scripts/jquery-1.6.js"></script>
+    <script type="text/javascript" src="~/Scripts/cufon-yui.js"></script>
+    <script type="text/javascript" src="~/Scripts/cufon-replace.js"></script>
+    <script type="text/javascript" src="~/Scripts/Vegur_300.font.js"></script>
+    <script type="text/javascript" src="~/Scripts/PT_Sans_700.font.js"></script>
+    <script type="text/javascript" src="~/Scripts/PT_Sans_400.font.js"></script>
+    <script type="text/javascript" src="~/Scripts/tms-0.3.js"></script>
+    <script type="text/javascript" src="~/Scripts/tms_presets.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="~/Scripts/atooltip.jquery.js"></script>
+    
+    @RenderSection("FancyBox", required: false)
+
+</head>
+<body>
+    @RenderSection("scripts", required: false)
+    @RenderBody()
+    
+        <!--content end-->
+        <!--footer -->
+        <footer>
+            <ul id="icons">
+                <li class="first">Follow Us:</li>
+                <li><a href="#" class="normaltip" title="Facebook"><img src="../images/icon1.jpg" alt=""></a></li>
+                <li><a href="#" class="normaltip" title="Twitter"><img src="../images/icon2.jpg" alt=""></a></li>
+                <li><a href="#" class="normaltip" title="Picasa"><img src="../images/icon3.jpg" alt=""></a></li>
+                <li><a href="#" class="normaltip" title="YouTube"><img src="../images/icon4.jpg" alt=""></a></li>
+            </ul>
+            PicUpload.com &copy; 2014 <br>Website devoloped by BITF11A023</a><br>
+            <!-- {%FOOTER_LINK} -->
+        </footer>
+        <!--footer end-->
+                
+    <script type="text/javascript"> Cufon.now(); </script>
+</body>
+</html>

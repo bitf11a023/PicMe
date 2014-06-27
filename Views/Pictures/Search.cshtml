@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+@model PicMe.Models.Picture
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+
+    <style type="text/css">
+        .green {
+            font-weight: bolder;
+            color: #5f870e;
+        }
+
+        .red {
+            font-weight: bold;
+            color: Red;
+        }
+
+        .blue {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#search_bt').click(function () {
+                var name = $("#pname").val();
+                var status = $("#divStatus");
+
+
+                status.html("Checking....").removeClass();
+                if (name == "") {
+                    status.html("All Fields are required !").addClass("blue");
+                    return;
+                }
+                $.post("../Pictures/SearchPic", { searchName: name },
+                    function (data) {
+                        if (data) {
+                            status.html(name + " is Not Available").addClass("green");
+
+
+                        } else {
+                            status.html(name + " found!").addClass("red");
+
+                        }
+                    });
+            });
+        });
+    </script>
+</head>
+
+<body id="page5">
+    <div class="main">
+        <!--header -->
+        <header>
+            <div class="wrapper">
+                <h1><a href="index.html" id="logo">picme.com</a></h1>
+                <div id="search">
+                    <a href="logout.php><h1 style=" padding-top:0px; font-size:20px;"></h1></a>
+                </div>
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li><a href="../Pictures/Upload"><span>Upload</span></a></li>
+                    <li><a href="../Account/Profile"><span>Profile	</span></a></li>
+                    <li><a href="../Pictures/Gallery"><span>Gallery</span></a></li>
+                    <li><a href="../Pictures/Delete"><span>Delete</span></a></li>
+                    <li class="last "><a href="../Account/Feedback"><span>FeedBack</span></a></li>
+                </ul>
+            </nav>
+        </header>
+        <article id="content">
+            <div class="wrapper" style="margin-top:0px;">
+                <h2>Enter name of Picture</h2>
+                <div style="margin-left:80px;">
+                    <form id="ContactForm" name="CreateAlbum" action="/Account/SearchPic">
+                        <div class="wrapper">
+                            <span>Name: </span>
+                            <div class="bg"><input type="text" class="input" id="pname" name="pname"></div>
+                        </div>
+                        <div id="divStatus" style="float:inherit;">
+                            <h1>Nothing </h1>
+                        </div>
+                        <br>
+                        <div style="float:right;">
+                            <input class="button1" type="button" id="search_bt" value="Search">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+</body>
+
+</html>
