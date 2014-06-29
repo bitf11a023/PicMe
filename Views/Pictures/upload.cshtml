@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Upload";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+	<body id="page5">
+		<div class="main">
+<!--header -->
+			<header>
+				<div class="wrapper">
+					<h1><a href="index.php" id="logo">Superior.com</a></h1>
+					<div id="search">
+							<a href="logout.php"><span><h1 style="padding-top:0px; font-size:20px;"></h1></span></a>
+					</div>
+				</div>
+				<nav>
+                    <ul id="menu">
+                        <li class="active"><a href="../Pictures/Upload"><span>Upload</span></a></li>
+                        <li><a href="../Account/Profile"><span>Profile	</span></a></li>
+                        <li><a href="../Pictures/Gallery"><span>Gallery</span></a></li>
+                        <li><a href="../Pictures/PublicPics"><span>Public</span></a></li>
+                        <li class="last"><a href="../Pictures/Search"><span>Search</span></a></li>
+                    </ul>
+				</nav>
+			</header>
+<!--header end-->
+<!--content -->
+<table class="leftsidebar">
+		<tr style="border:none;">
+			<td style="width:130px;padding:100px 0 0 50px;">
+				<ul>
+					<li ><a href="../Account/Profile" ><span>Profile</span></a></li>
+					<li><a href="../Account/Edit" ><span>Edit profile</span></a></li>
+					<li><a href="../Pictures/Upload" ><span>Upload Pictures</span></a></li>
+				</ul>
+			</td>
+			<td>
+		
+			
+			<article id="content">
+			<h2>Upload Pictures</h2>
+                @using (Html.BeginForm("UploadPictures", "Pictures", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+                {
+                    <label for="file">Upload Image:</label>
+                    <input type="file" name="file" id="file" style="width: 100%;" />
+                    <div class="wrapper">
+                            <span>Privacy:</span>
+                            Public <input type="radio" name="Privacy" value="0" checked="checked">
+                            Private <input type="radio" name="Privacy" value="1">
+                        </div>
+                    <input  type="submit" value="Upload" class="submit" />
+                }
+                </article>
+							
+        
+		</div>
+		<div class="bg1">
+			<div class="main">
+				<article id="content2">
+					<div class="wrapper">
+						<div class="color2 pad_bot1">
+						
+					</div>
+					</div>
+				</article>
+             
+			</div>
+		</div>
+
+	</body>
+</html>

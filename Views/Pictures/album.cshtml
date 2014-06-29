@@ -1,0 +1,82 @@
+﻿@{ViewBag.Title = "Album";}
+@model PicMe.Models.Album
+<!DOCTYPE html>
+<html lang="en">
+   
+	<body id="page5">
+		<div class="main">
+<!--header -->
+			<header>
+				<div class="wrapper">
+					<h1><a href="index.html" id="logo">Superior.com</a></h1>
+					<div id="search">
+							<a href="logout.html"><h1 style="padding-top:0px; font-size:25px;"></h1></a>
+					</div>
+				</div>
+				<nav>
+                    <ul id="menu">
+                        <li><a href="../Pictures/Upload"><span>Upload</span></a></li>
+                        <li><a href="../Account/Profile"><span>Profile	</span></a></li>
+                        <li><a href="../Pictures/Gallery"><span>Gallery</span></a></li>
+                        <li><a href="../Pictures/PublicPics"><span>Public</span></a></li>
+                        <li class="last"><a href="../Pictures/Search"><span>Search</span></a></li>
+                    </ul>
+				</nav>
+			</header>
+<!--header end-->
+<!--content -->
+<table class="leftsidebar" style="margin-bottom:100px;">
+		<tr style="border:none;" >
+			<td style="border:none;width:130px;padding:150px 0 0 20px;">
+				<ul>
+					<li style="background:#101010;"><a href="album.html?op=view"><span>View Albums</span></a></li>
+					<li ><a href="../Account/CreateAlbum"><span>Create Album</span></a></li>
+					<li ><a href="../Pictures/Gallery"><span>View Gallery</span></a></li>
+					<li ><a href="../Pictures/Search"><span>Search Picture</span></a></li>
+					<li ><a href="#"><span>Delete Picture</span></a></li>
+					<li ><a href="#"><span>Share Picture</span></a></li>
+					<li ><a href="../Pictures/Upload"><span>Upload Picture</span></a></li>
+				</ul>
+			</td><td>
+			<article id="content">
+				<div class="wrapper" style="margin-top:0px;">
+					<h2>Create Album</h2>
+					<div style="margin-left:80px;">
+					<form id="ContactForm" name="CreateAlbum"  action="/Pictures/AddAlbum">
+							<div  class="wrapper">	
+                                <span style="color:#5F870E">Title: </span>
+								<div class="bg">@Html.EditorFor(model => model.AlbumName)</div>
+                             <div>   @Html.ValidationMessageFor(model => model.AlbumName)
+                                <!--<input type="text" class="input" name="aname">--></div>
+							</div>
+							<br>
+							<div  class="textarea_box">
+                                <span style="color:#5F870E">Description: </span>
+								<div class="bg">@Html.EditorFor(model => model.Description)
+                       
+                        @Html.ValidationMessageFor(model => model.Description)<!--<textarea name="adescription" cols="1" rows="1" style="width:640px; resize:vertical; max-height:100px;"></textarea>--></div>								
+							</div>
+							<div style="float:right;">
+							<input class="button1" type="submit" name="Submit" value="Create Album">
+							</div>
+					</form>
+				</div>
+			</div>
+			</article></td> 
+			<td>
+				
+		<div class="bg1">
+			<div class="main">
+				<article id="content2">
+					<div class="wrapper">
+						
+					</div>
+				</article>
+			</div>
+		</div>
+
+	</body>
+</html>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
