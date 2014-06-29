@@ -1,4 +1,2 @@
-PicMe
-=====
-
-Developed By Rana Osama
+PicMeSite
+=========
