@@ -42,6 +42,8 @@
 
 
                         } else {
+                            
+                            location.href = "../Pictures/SearchSucccessfull?name="+name;
                             status.html(name + " found!").addClass("red");
 
                         }
@@ -66,8 +68,8 @@
                     <li><a href="../Pictures/Upload"><span>Upload</span></a></li>
                     <li><a href="../Account/Profile"><span>Profile	</span></a></li>
                     <li><a href="../Pictures/Gallery"><span>Gallery</span></a></li>
-                    <li><a href="../Pictures/Delete"><span>Delete</span></a></li>
-                    <li class="last "><a href="../Account/Feedback"><span>FeedBack</span></a></li>
+                    <li><a href="../Pictures/PublicPics"><span>Public</span></a></li>
+                    <li class="last active"><a href="../Pictures/Search"><span>Search</span></a></li>
                 </ul>
             </nav>
         </header>
@@ -75,13 +77,13 @@
             <div class="wrapper" style="margin-top:0px;">
                 <h2>Enter name of Picture</h2>
                 <div style="margin-left:80px;">
-                    <form id="ContactForm" name="CreateAlbum" action="/Account/SearchPic">
+                    <form id="ContactForm" name="CreateAlbum" action="/Pictures/SearchPic">
                         <div class="wrapper">
                             <span>Name: </span>
                             <div class="bg"><input type="text" class="input" id="pname" name="pname"></div>
                         </div>
                         <div id="divStatus" style="float:inherit;">
-                            <h1>Nothing </h1>
+                            <h1> </h1>
                         </div>
                         <br>
                         <div style="float:right;">

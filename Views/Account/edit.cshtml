@@ -1,0 +1,91 @@
+﻿@model PicMe.Models.User
+@{
+    ViewBag.Title = "EditProfile";
+}<!DOCTYPE html>
+<html lang="en">
+    
+	<body id="page5">
+		<div class="main">
+<!--header -->
+			<header>
+				<div class="wrapper">
+					<h1><a href="index.html" id="logo">Superior.com</a></h1>
+					<div id="search">
+						<a href="logout.php"><span><h1 style="padding-top:0px; font-size:20px;"></h1></span></a>
+					</div>
+				</div>
+				<nav>
+                    <ul id="menu">
+                        <li><a href="../Pictures/Upload"><span>Upload</span></a></li>
+                        <li><a href="../Account/Profile"><span>Profile	</span></a></li>
+                        <li><a href="../Pictures/Gallery"><span>Gallery</span></a></li>
+                        <li><a href="../Pictures/PublicPics"><span>Public</span></a></li>
+                        <li class="last "><a href="../Pictures/Search"><span>Search</span></a></li>
+                    </ul>
+				</nav>
+			</header>
+<!--header end-->
+<!--content -->
+		<table class="leftsidebar" style="margin-bottom:200px;">
+		<tr style="border:none;">
+			<td style="border:none;width:130px;padding:100px 0 0 50px;">
+				<ul>
+					<li ><a href="../Account/Profile"><span>Profile</span></a></li>
+					<li style="background:#101010;"><a href="../Account/Edit"><span>Edit profile</span></a></li>
+				</ul>
+			</td>
+			<td>
+			
+			<article id="content">
+				<div class="wrapper" style="margin-top:0px;">
+					<h2>Edit profile</h2>
+					<div style="margin-left:80px;">
+						<p>Edit your profile and click on 'Save' button to apply changes: </p>
+					<br>
+					<form id="ContactForm" name="EditProfile" method="POST" action="/Account/EditProfile">
+						<div>
+							<div  class="wrapper">	
+								<span>First Name:</span>
+								<div class="bg"><input type="text" class="input" name="FName" value="@Model.FName"></div>
+							</div>
+							<br>
+							<div  class="wrapper">
+								<span>Last Name:</span>
+								<div class="bg"><input type="text" class="input" name="LName" value="@Model.LName"></div>								
+							</div>
+							<br>
+							<div  class="wrapper">
+								<span>Email ID:</span>
+								<div class="bg"><input type="text" class="input" name="Email" value="@Model.Email"></div>								
+							</div>
+							<br>
+							<div  class="wrapper">
+								<span>Gender:</span>
+								Male <input type="radio" name="Gender" value="Male" >
+								Female <input type="radio" name="Gender" value="Female"  >
+							</div>
+							<br>
+							<div style="float:right;padding-right:320px;">
+							<input class="button1" type="submit" name="Submit" value="Save">
+							</div>
+						</div>
+					</form>
+					<article id="content">
+			
+				</div>
+			</div>
+			</article>
+			</td></tr>
+			</table>
+		</div>
+		<div class="bg1">
+			<div class="main">
+				<article id="content2">
+					<div class="wrapper">
+					</div>
+				</article>
+			</div>
+		</div>
+
+	</body>
+</html>

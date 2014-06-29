@@ -1,0 +1,79 @@
+﻿
+@{ViewBag.Title = "ContactUs";}
+<!DOCTYPE html>
+<html lang="en">
+
+	<body id="page5">
+		<div class="main">
+<!--header -->
+			<header>
+				<div class="wrapper">
+					<h1><a href="index.html" id="logo">Superior.com</a></h1>
+					<div id="search">
+							<a href="index.html"><span><h1 style="padding-top:0px; font-size:20px;">Login</h1></span></a>
+					</div>
+				</div>
+				<nav>
+					<ul id="menu">
+				
+                        <li><a href="~/Home/overview"><span>Overview</span></a></li>
+                        <li><a href="~/Home/Index"><span>Home</span></a></li>
+                        <li><a href="~/Home/aboutus"><span>About Us</span></a></li>
+                        <li class="active"><a href="~/Home/contacts"><span>Contact Us</span></a></li>
+                        <li class="last"><a href="~/Home/Signup"><span>SignUp</span></a></li> 
+					</ul>
+				</nav>
+			</header>
+<!--header end-->
+<!--content -->
+			
+			
+			<div class="wrapper">
+					<h2>Contact Form</h2>
+					<form id="ContactForm" method="post">
+						<div>
+							<div  class="wrapper">
+								<span>Name:</span>
+								<div class="bg"><input type="text" class="input" ></div>
+							</div>
+							<br>
+							<div  class="wrapper">
+								<span>Email:</span>
+								<div class="bg"><input type="text" class="input" ></div>								
+							</div>
+							<br>
+							<div  class="textarea_box">
+								<span>Comments:</span>
+								<div class="bg"><textarea name="textarea" cols="1" rows="1"></textarea></div>								
+							</div>
+							<div style="float:right;">
+							<input class="button1" type="submit" name="Submit" value="Submit">
+							<input class="button1" type="reset" value="Clear">
+							</div>
+						</div>
+					</form>
+					<h2 style="color:yellow; padding-left:30px;">Thank you for contacting Us!</h2>
+				</div>
+		
+		</div>
+		<div class="bg1">
+			<div class="main">
+			
+				<article id="content2">
+					<div class="wrapper">
+						<h3>Our Contacts</h3>
+					
+						<div class="col1">
+							<p class="address"><span class="color2">Rana Osama</span><br>
+									<span>Work as:</span>.Net developer<br>
+									<span>Mobile #:</span><br>
+									<span>Email:</span><a href="mailto:">bitf11a023@pucit.edu.pk</a></p>
+						</div>
+					
+					</div>
+				</article>
+			</div>
+		</div>
+
+	</body>
+</html>

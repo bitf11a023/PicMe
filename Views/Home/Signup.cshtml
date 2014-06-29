@@ -1,0 +1,130 @@
+﻿@model PicMe.Models.User
+<head>
+    <title></title>
+    <style type="text/css">
+        .green { 
+            font-weight: bolder ;
+            color: #5f870e;
+        }
+
+        .red {
+            font-weight: bold;
+            color: Red;
+        }
+        .blue {
+             font-weight:bold;
+            color:blue;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#user-bt').click(function () {
+                var name = $("#UserName").val();
+                var status = $("#justforjson");
+                
+                
+                status.html("Checking....").removeClass();
+                if (name == "") {
+                    status.html("All Fields are required !").addClass("blue");
+                    return;
+                }
+                $.post("../Home/CheckUserName", { username: name },
+                    function (data){
+                        if (data) {
+                            status.html(name + " Is available!").addClass("green");
+
+                            } else {
+                            status.html(name + " is not available!").addClass("red");
+                           
+                        }
+                    });
+            });
+        });
+    </script>
+    </head>
+	<body id="page5">
+		<div class="main">
+<!--header -->
+			<header>
+                <div class="wrapper">
+                    <h1><a href="home/index" id="logo">PicUpload</a></h1>
+                    <div id="search">
+                        <a href="home/index"><h1 style="padding-top:0px; font-size:20px;">Login</h1></a>
+                    </div>
+                </div>
+				<nav>
+					<ul id="menu">
+						
+                        <li><a href="~/Home/overview"><span>Overview</span></a></li>
+                        <li><a href="~/Home/Index"><span>Home</span></a></li>
+                        <li><a href="~/Home/aboutus"><span>About Us</span></a></li>
+                        <li><a href="~/Home/contacts"><span>Contact Us</span></a></li>
+                        <li class="last active"><a href="~/Home/Signup"><span>SignUp</span></a></li> 
+					</ul>
+				</nav>
+			</header>
+<!--header end-->
+<!--content -->
+			<div class="wrapper">
+					<h2>Signup Form</h2>
+					<br>
+					<p id ="justforjson">All Fields are Required.</p>
+               
+               
+                <form id="ContactForm" name="Signup" method="POST" action="/Account/SubmitChanges">
+                    <div>
+                        <div class="wrapper">
+                            <span>First Name:</span>
+                            <div class="bg"><input required type="text" class="input" name="FName"></div>
+                        </div>
+                        <br>
+                        <div class="wrapper">
+                            <span>Last Name:</span>
+                            <div class="bg"><input required type="text" class="input" name="LName"></div>
+                        </div>
+                        <br>
+                        <div class="wrapper">
+                            <span>Username:</span>
+                            <div class="bg">@Html.TextBoxFor(model => model.UserName, new { Class = "input"})@Html.ValidationMessageFor(model => model.UserName)<!--<input type="text" class="input" name="UserName" id="UserName">--></div>
+                            <input type="button" id="user-bt" class="button2" value="Check Availability">
+                        </div>
+
+                        <br />
+                        <div class="wrapper">
+                            <span>Email ID:</span>
+                            <div class="bg">@Html.TextBoxFor(model => model.Email, new { Class = "input"})@Html.ValidationMessageFor(model => model.Email)</div>
+                        </div>
+                        <br>
+                        <div class="wrapper">
+                            <span>Gender:</span>
+                            Male <input type="radio" name="Gender" value="Male" checked="checked">
+                            Female <input type="radio" name="Gender" value="Female">
+                        </div>
+                        <br>
+                        <div class="wrapper">
+                            <span>Password:</span>
+                            <div class="bg"><input required type="password" class="input" name="Password"></div>
+                        </div>
+                        <br>
+                        <div style="float:right;">
+                            <input class="button1" type="submit" value="Sign Up">
+                            <input class="button1" type="reset" value="Clear">
+                        </div>
+                    </div>
+                </form>
+				</div>
+			
+		</div>
+		<div class="bg1">
+			<div class="main">
+				<article id="content2">
+					<div class="wrapper">
+					</div>
+				</article>
+			</div>
+		</div>
+
+	</body>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

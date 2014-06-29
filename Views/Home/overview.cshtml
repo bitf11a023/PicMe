@@ -1,0 +1,133 @@
+﻿
+@{ViewBag.Title = "Overview";}
+
+<!DOCTYPE html>
+<html>
+<head><title>Overview</title></head>
+    <body id="page1">
+        <div class="main">
+            <!--header -->
+            <header>
+                <div class="wrapper">
+                    <h1><a href="../Home/index" id="logo">PicUpload</a></h1>
+                    <div id="search">
+                        <a href="../Home/index"><h1 style="padding-top:0px; font-size:20px;">Login</h1></a>
+                    </div>
+                </div>
+                <nav>
+                    <ul id="menu">
+
+                        <li class="active"><a href="../Home/overview"><span>Overview</span></a></li>
+                        <li><a href="../Home/Index"><span>Home</span></a></li>
+                        <li><a href="../Home/aboutus"><span>About Us</span></a></li>
+                        <li><a href="../Home/contacts"><span>Contact Us</span></a></li>
+                        <li class="last"><a href="../Home/Signup"><span>SignUp</span></a></li>
+                    </ul>
+                </nav><div id="slider">
+                    <ul class="items">
+                        <li>
+                            <img src="~/Images/gallery.jpg" />
+
+                            <div class="banner">
+                                <span class="title"><span class="color2">Store Picture</span><span>they Express</span><span class="color2">Feelings</span></span>
+                                <p style="color:black ;">“When I look at my old pictures, all I can see is what I used to be but am no longer. I think: What I can see is what I am not” - Aleksandar Hemon</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="~/Images/memories.jpg" />
+
+                            <div class="banner">
+                                <span class="title"><span class="color2">Memories</span><span>Lasts</span><span class="color2"> Forever</span></span>
+                                <p style="color:black;">"A Picture is story within a frame; the best picture contained a whole war within one frame ― Tatjana Soli"</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="~/Images/album.jpg" />
+
+                            <div class="banner">
+                                <span class="title"><span class="color2">The Best</span><span>You Can Find</span><span class="color2">On The Web</span></span>
+                                <p style="color:black;">Store your valuable pictures on secure place, find them in easily when ever you want them</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <!--header end-->
+            <!--content -->
+
+            <div class="wrapper">
+                <div class="col1 marg_right1">
+                    <h2>Uploading</h2>
+                    <p><a href="index.html">PicUpload</a> is a picture uploading website. It provides online space for user's pictures, albums.</p>
+                </div>
+                <div class="col1 marg_right1">
+                    <h2>Sharing</h2>
+                    <p>It also provides the facility of sharing them on different social network websites.</p>
+                </div>
+                <div class="col1 marg_right1">
+                    <h2>Security</h2>
+                    <p><a href="../Home/index">PicUpload</a> gives users a secure place to have their private pictures. There is also a feature of "Back Up" if any of pictures is lost.</p>
+                </div>
+                <div class="col1">
+                    <h2>Services</h2>
+                    <ul class="list1">
+                        <li>Upload Pictures</li>
+                        <li>Create Albums</li>
+                        <li>Share Pictures and Albums</li>
+                        <li>Back Up</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="bg1">
+            <div class="main">
+                <article id="content2">
+                    <div class="wrapper">
+                        <div class="col2 marg_right1">
+                            <h3>Welcome to <a href="../Home/Index">PicUpload</a></h3>
+                            <div class="wrapper">
+                                <figure class="left marg_right1"><img src="../images/page1_img1.jpg" alt=""></figure>
+                                <p class="color2 pad_bot1">We assure you the best picture uploading and album managing web platform.</p>
+                                <p>Here you can have a large space for your photos that you don't want to lose. If any of the picture is deleted accidently then you can call for backup. This way <a href="../Home/index">PicUpload </a>  provides you a secure web gallery.</p>
+                            </div>
+                            <p>Not only you can just upload the pictures or create albums. You can also share them with your friends on famous Social Network websites!</p>
+                        </div>
+                        <div class="col1">
+                            <h3>Services</h3>
+                            <ul class="list2">
+                                <li>
+                                    <a href="#">Uploading Pictures.</a><br>
+                                    Upload pictures of your choice.
+                                </li>
+                                <li><a href="#">Create Albums</a><br>Create Albums to manage your photos.</li>
+                                <li><a href="#">Share Pictures and Albums</a><br>Share your pictures or albums on famous social network websites.</li>
+                                <li><a href="#">Back Up</a><br>You can have backup of your deleted photos within 14 days!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <script>
+            $(window).load(function () {
+                $('#slider')._TMS({
+                    banners: true,
+                    waitBannerAnimation: false,
+                    preset: 'diagonalFade',
+                    easing: 'easeOutQuad',
+                    pagination: true,
+                    duration: 400,
+                    slideshow: 5000,
+                    bannerShow: function (banner) {
+                        banner.css({ marginRight: -500 }).stop().animate({ marginRight: 0 }, 600)
+                    },
+                    bannerHide: function (banner) {
+                        banner.stop().animate({ marginRight: -500 }, 600)
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>
